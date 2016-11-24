@@ -1,0 +1,120 @@
+body {
+	font-family: $bodyfont;
+	font-size: 11px;
+}
+h1, h2 {
+	font-family: $headerfont;
+	text-transform: uppercase;
+	text-align: center;
+}
+h1 {
+	font-size: 4.5vw;
+	color: white;
+	padding-top: 15%;
+	line-height: 55px;
+	position: relative;
+	z-index: 1;
+		span {
+			color: $red;
+		}
+}
+	h1::after {
+		content: '';
+		position: absolute;
+		bottom: -26px;
+		transform: translateX(-50%);
+		width: 48px;
+		height: 4px;
+		left: 50%;
+		background-color: white;
+		z-index: 1000;
+	}
+h2 {
+	font-size: 3.6vw;
+	color: $black;
+	padding: 0 0 40px 0;
+	position: relative;
+	z-index: 2;
+}
+	h2::after {
+		content: '';
+		position: absolute;
+		bottom: 18px;
+		transform: translateX(-50%);
+		width: 48px;
+		height: 4px;
+		left: 50%;
+		background-color: $red;
+		z-index: -1;
+	}
+h3 {
+	font-size: 1.2rem;
+	font-family: $subheaderfont;
+	color: $black;
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 100;
+}
+h4 {
+	font-size: 0.75rem;
+	font-family: $bodyfont;
+	text-transform: uppercase;
+	text-align: center;
+	position: relative;
+	z-index: 100;
+}
+p {
+	font-size: 0.9rem;
+	line-height: 19px;
+	color: $lightgrey;
+	text-align: center;
+}
+p.small {
+	font-size: 0.75rem;
+	line-height: 20px;
+	color: $grey;
+	padding-top: 15px;
+	text-align: center;
+}
+::-moz-selection {
+	background: cadetblue;
+}
+::selection {
+	background: cadetblue;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.flex_container {
+	display: flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+.cell {
+	width: 100%;
+}
+.wrapper {
+	max-width: 600px;
+	width: 63%;
+	margin: 0 auto;
+}
+section {
+	padding: 120px 0;
+}
+button {
+	border: 1.5px solid $red;
+	background-color: transparent;
+	font-family: $headerfont;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+	padding: 10px 20px;
+	color: white;
+}
+	button:hover, button:focus {
+		background-color: $red;
+	}

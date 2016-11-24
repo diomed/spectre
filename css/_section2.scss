@@ -1,0 +1,299 @@
+section.section2 {
+	background-color: $black;
+	margin: 0 auto;
+		.work {
+			margin: 0 auto;
+				h2 {
+					color: white;
+				}
+		}
+}
+section.section2 .work > p {
+	padding-bottom: 70px;
+}
+ul.work {
+	justify-content: space-between;
+	border-top: 0.5px solid rgba(255,255,255,0.2);
+	width: 66%;
+	margin: 0 auto;
+		li {
+			position: relative;
+			top: -1px;
+			padding: 20px 0;
+			border-top: 1.5px solid transparent;
+				&:hover, &:focus {
+					padding-top: 20px;
+					border-color: $red;
+			}
+		}
+}
+.work ul.work li a {
+	font: 0.75rem $bodyfont;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	padding: 30px 0;
+}
+.work ul.work li a:hover, a:focus {
+	color: $red;
+}
+
+.work_gallery{
+	width: 100%;
+}
+.work_gallery figure.work_item {
+	position: relative;
+	width: 25%;
+	float: left;
+		figcaption.work_overlay {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			transition: 0.25s all ease;
+			bottom: 10px;
+			left: 10px;
+			padding: 55px;
+			text-align: center;
+			background: rgba($red, 0.75);
+			opacity: 0;
+		}
+}
+.work_gallery .carousel-cell {
+	width: 100%;
+}
+
+.work_gallery figure.work_item:hover figcaption.work_overlay {
+	opacity: 1;
+}
+.work_gallery figcaption.work_overlay h4 {
+	padding-bottom: 5px;
+}
+.work_gallery figcaption.work_overlay h3 {
+	color: white;
+	font-size: 1.4rem;
+}
+.work_gallery figcaption.work_overlay i {
+	font-size: 1.7rem;
+	color: white;
+	padding: 8px 17px;
+	border-radius: 50%;
+	border: 2px solid $black;
+	margin-top: 20px;
+	transition: 0.25s all ease;
+		&:hover,&:focus{
+			background-color: white;
+			color: $red;
+			border-color: white;
+		}
+}
+
+// FLICKITY ARROWS
+.work_gallery .flickity-prev-next-button {
+	width: 40px;
+	height: 40px;
+	background: transparent;
+}
+.work_gallery .flickity-prev-next-button .arrow {
+	fill: white;
+}
+.work_gallery .flickity-prev-next-button:hover {
+	background: rgba(255,255,255,0.2);
+}
+.work_gallery .flickity-prev-next-button.previous {
+	position: relative;
+	left: 47%;
+	bottom: -40px;
+}
+.work_gallery .flickity-prev-next-button.next {
+	position: relative;
+	right: -46.5%;
+	bottom: -40px;
+}
+// END FLICKITY ARROWS
+
+.quote_box {
+	position: relative;
+	background-color: $red;
+	width: 60%;
+	text-align: center;
+	padding: 30px 60px;
+	margin: 150px auto 0 auto;
+	z-index: 40;
+		.quote_text {
+			padding: 10px 0;
+			width: 100%;
+			z-index: 50;
+			color: #6E1B23;
+			font: 0.9rem $headerfont;
+		}
+}
+blockquote > p {
+	color: white;
+	font-size: 0.7rem;
+	font-style: italic;
+	padding-top: 10px;
+	z-index: 50;
+	font-weight: normal;
+}
+.quote_text.is-selected{
+	width: 100%;
+	padding: 0 5%;
+}
+ol.flickity-page-dots{
+	position: absolute;
+	right:0;
+	left:0;
+}
+.quote_box .flickity-page-dots .dot{
+	width: 10px;
+	height: 10px;
+	opacity: 0.5;
+	background: $red;
+	border-radius: 50%;
+	font-size: 0.6rem;
+	transition: 0.3s all ease;
+		&:hover,&:focus,&:target{
+			color: $red;
+			box-shadow: 0 0 3px 10px rgba($red, 0.7);
+		}
+}
+.stats_container {
+	padding-top: 100px;
+	width: 60%;
+	margin: 0 auto;
+	justify-content: space-between;
+		.stat_item {
+			width: 22%;
+				.stat1 {
+					align-items: center;
+				}
+		}
+}
+.stat_item .stat1:nth-of-type(3) {
+	width: 25%;
+}
+.stat_item .stat1 p:first-child {
+	font: 3rem $headerfont;
+	color: $red;
+	padding-right: 10px;
+}
+.stat_item .stat1 p:last-child {
+	font: 1rem $subheaderfont;
+	color: white;
+	text-align: left;
+	line-height: 20px;
+	text-transform: uppercase;
+}
+.stat_item p.stat2 {
+	padding-top: 10px;
+	text-align: left;
+}
+
+// MEDIA QUERIES///////////////////////////////////////////////////////////
+
+@media all and (max-width: 1100px) {
+	.work_gallery figure.work_item figcaption.work_overlay {
+		padding: 30px 40px 55px 40px;
+			h3 {
+				color: white;
+				font-size: 1.2rem;
+			}
+	}
+	.work_gallery figcaption.work_overlay > i {
+		font-size: 1rem;
+		color: white;
+		padding: 6px 11px;
+	}
+}
+
+@media all and (max-width: 950px) {
+	section.section2 h2 {
+		font-size: 2.1rem;
+	}
+	.stats_container {
+		flex-wrap: wrap;
+		justify-content: space-between;
+			.stat_item  {
+				width: 45%;
+				padding-bottom: 15px;
+			}
+	}
+}
+
+@media all and (max-width: 768px) {
+	ul.work {
+		flex-wrap: wrap;
+		width: 95%;
+	}
+	.work_gallery figure.work_item {
+		width: 50%;
+			.work_overlay h4 {
+				margin-top: 12%;
+			}
+	}
+	.stats_container {
+		flex-direction: column;
+	}
+	.stats_container .stat_item {
+		display: flex;
+		width: auto;
+		padding-bottom: 25px;
+			.stat1 {
+				align-items: flex-start;
+				width: auto;
+				flex-direction: column;
+				margin-right: 15px;
+				align-content:center;
+					br {
+						display: none;
+					}
+			}
+	}
+	.work_gallery .flickity-prev-next-button.previous {
+		left: 44%;
+	}
+	.work_gallery .flickity-prev-next-button.next {
+		right: -45%;
+	}
+}
+
+@media all and (max-width: 480px) {
+	.wrapper {
+		max-width: 800px;
+		width: 78%;
+	}
+	.work_gallery figure.work_item {
+		width: 100%;
+	}
+	figure.work_item:nth-child(odd){
+		display: none;
+	}
+	.work_gallery .carousel-cell:last-child{
+		display: none;
+	}
+	figcaption.work_overlay{
+		display: none;
+	}
+	.quote_box{
+		width: 75%;
+	}
+	.stat_item {
+		align-items:center;
+			.stat1 p:first-child {
+				font-size: 2.3rem;
+			}
+	}
+	.work_gallery .flickity-prev-next-button.previous {
+		left: 40%;
+	}
+	.work_gallery .flickity-prev-next-button.next {
+		right: -42%;
+	}
+	.quote_box{
+		padding:20px 15px;
+	}
+	section {
+		padding: 90px 0;
+	}
+}

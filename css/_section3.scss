@@ -1,0 +1,68 @@
+.team {
+	flex: 1 0 25%;
+	margin-top: 70px;
+		.team_item {
+			position: relative;
+				.team_overlay {
+					position: absolute;
+					content:'';
+					top: 10px;
+					right: 10px;
+					bottom: 10px;
+					left: 10px;
+					transition: 0.25s all ease;
+					padding: 50% 20%;
+					text-align: center;
+					background: rgba($red, 0.9);
+					opacity: 0;
+				}
+		}
+}
+.team .team_item:hover .team_overlay {
+	opacity: 1;
+		h3 {
+			color: white;
+			font-size: 1.6rem;
+			padding-bottom: 10px;
+		}
+}
+.team_item .team_overlay > p {
+	font-style: italic;
+	color: $black;
+	font-weight: bold;
+}
+.team_overlay .team_icons {
+	margin: 80% 13% 0 13%;
+		i {
+			margin: 0 auto;
+			padding: 6px;
+		}
+}
+.team_overlay .team_icons i:hover, i:focus {
+	border-radius: 100%;
+	border: 1px solid $black;
+	padding: -1.5px;
+}
+
+// MEDIA QUERIES////////////////////////////////////////////////////
+
+// @media all and (max-width: 940px) {
+// }
+
+@media all and (max-width: 768px) {
+	.team {
+		flex-wrap: wrap;
+			.team_item {
+				width: 50%;
+			}
+	}
+	.team .team_overlay .team_icons {
+		margin: 85% 5% 0 3%;
+	}
+}
+
+@media all and (max-width: 650px) {
+	.team .team_overlay .team_icons {
+		margin-top: 25%;
+	}
+}

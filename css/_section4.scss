@@ -1,0 +1,118 @@
+section.section4 {
+	padding-top: 0;
+	padding-bottom: 70px;
+}
+section.section4 .contact_container {
+	width: 60%;
+	margin: 100px auto 0 auto;
+	justify-content: space-between;
+}
+.contact1 {
+	width: 50%;
+}
+.contact2 {
+	width: 40%;
+}
+
+.contact1 h3 {
+	text-align: left;
+	padding-left: 15px;
+	margin-top: 40px;
+}
+
+.contact_container .contact1 form {
+	width: 100%;
+	display: block;
+	padding: 20px 0 0 15px;
+		input[type=first_name], input[type=email], textarea {
+			width: 100%;
+			font: 0.75rem $bodyfont;
+			color: $grey;
+			border-top: 0;
+			border-right: 0;
+			border-bottom: 1px solid $lightgrey;
+			border-left: 0;
+			margin-top: 20px;
+			padding: 15px 0;
+			text-align: left;
+		}
+}
+.contact1 form textarea {
+	height: 150px;
+	margin-bottom: 45px;
+}
+input.submit_button {
+	color: $black;
+	border: 1.5px solid $red;
+	padding: 10px 40px;
+	text-transform: uppercase;
+	background-color: transparent;
+	font-family:$headerfont;
+	letter-spacing: 2px;
+	cursor: pointer;
+	display: block;
+}
+input[type=submit]:hover, input[type=submit]:focus {
+	background-color: $red;
+	color: white;
+}
+
+// CONTACT2
+
+.contact2 .contact_box {
+	background-color: #B82E3E;
+	padding: 40px 50px 25px 50px;
+		h3 {
+			text-align: left;
+			padding-bottom: 20px;
+		}
+}
+.contact2 .contact_text {
+	margin-bottom: 20px;
+		p:first-child {
+			font-size: 0.8rem;
+			color: $black;
+			padding-bottom: 5px;
+			text-align: left;
+		}
+}
+.contact2 .contact_text p:last-child {
+	color: white;
+	text-align: left;
+	font-size: 0.8rem;
+}
+.contact2 iframe {
+	max-width: 100%;
+}
+
+// MEDIA QUERIES////////////////////////////////////////////////////
+
+@media all and (max-width: 900px) {
+	.contact_container {
+		flex-direction: column;
+	}
+	.contact1, .contact2 {
+		width: 100%;
+	}
+	.contact1 {
+		margin-bottom: 40px;
+		padding: 0;
+	}
+	.contact2 .contact_box {
+		padding: 20px 30px 10px 30px;
+	}
+	.contact2 .contact_box_sm {
+		display: flex;
+		justify-content: space-between;
+	}
+	.contact_text {
+		margin-right: 10px;
+	}
+}
+
+@media all and (max-width: 768px) {
+
+}
+
+// @media all and (max-width: 480px) {
+// }
