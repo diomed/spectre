@@ -79,13 +79,17 @@ header {
 	display: inline-block;
 }
 nav.top_nav .fa-bars, .fa-times {
-	color: white;
 	display: none;
+	color:$red;
+	transition:0.2s all ease;
 	cursor: pointer;
+	position: fixed;
+	right:18px;
+	z-index: 1000;
 }
 
 // END NAV TOGGLE STYLES//////////
-	
+
 	.header_content {
 		margin: 0 auto;
 		z-index: 10;
@@ -119,12 +123,11 @@ nav.top_nav .fa-bars, .fa-times {
 	nav {
 		padding: 10px 0;
 			ul.nav {
-				margin: 0 auto;
 				justify-content: space-between;
 				flex-direction: column;
 				display: none;
 				position: fixed;
-				z-index: 6000;
+				z-index: 1000;
 				top: 0;
 				right: 0;
 				left: 0;
@@ -133,45 +136,43 @@ nav.top_nav .fa-bars, .fa-times {
 				width: 100%;
 				background: rgba(white, 0.9);
 					li {
-						padding: 25px 0;
+						height:100%;
+						align-content:center;
+						padding: 20px 0;
 						text-align: center;
 						border-bottom: 0.5px solid $lightgrey;
+							a {
+								font-size: 1.2rem;
+								color: $black;
+									a:hover, a:focus {
+										color: $red;
+									}
+							}
 					}
 			}
 	}
-	nav ul.nav li a {
-		font-size: 1.2rem;
-		color: $black;
-			a:hover, a:focus {
-				color: $red;
-			}
-	}
+	nav ul.nav li 
 	.nav {
 		display: none;
 	}
 	.nav.show_menu {
 		display: flex;
 	}
-	nav.top_nav .fa-bars {
+	nav.top_nav .fa-bars, .fa-times {
 		display: inline-block;
+		color: grey;
 	}
-		nav.top_nav .fa-bars:hover, .fa-bars:focus {
-			color: $red;
-		}
-	nav.top_nav .fa-times {
-		color: white;
-	}
-		nav.top_nav .fa-times:hover, .fa-times:focus {
-			color: $red;
-		}
 	.search {
 		display: none;
+	}
+	.hide{
+		z-index: -5;
 	}
 }
 
 @media all and (max-width: 500px) {
 	h1 {
-		font-size: 1.8rem;
-		line-height: 30px;
+		font-size:6.5vw;
+		line-height: 35px;
 	}
 }

@@ -1,10 +1,13 @@
 .team {
 	flex: 1 0 25%;
 	margin-top: 70px;
+	font-size: 0;
 		.team_item {
 			position: relative;
+			z-index:-1;
 				.team_overlay {
 					position: absolute;
+					z-index: 50;
 					content:'';
 					top: 10px;
 					right: 10px;
@@ -62,7 +65,7 @@
 }
 
 @media all and (max-width: 650px) {
-	.team .team_overlay .team_icons {
-		margin-top: 25%;
+	.team .team_overlay, figcaption.work_overlay {
+		display: none;
 	}
 }

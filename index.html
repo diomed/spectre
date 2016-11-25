@@ -25,7 +25,7 @@
 					<li><a href="#services">services</a></li>
 					<li><a href="#works">works</a></li>
 					<li><a href="#careers">careers</a></li>
-					<li><a href="#blog">blog</a></li>
+					<li><a href="#top">blog</a></li>
 					<li><a href="#contact">contact</a></li>
 				</ul>
 				<div id="menu_icon" class="fa fa-bars fa-2x"></div>
@@ -405,13 +405,6 @@
 		</div>
 	</section>
 
-<!-- FOOTER -->
-
-	<footer>
-		
-	</footer>
-
-
 <!-- JAVASCRIPT -->
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -420,32 +413,33 @@
 		<script>
 			$(function() {
 				$('a').smoothScroll();
-			});
-
-			$(function() {
-				// when user clicks on the menu icon
+				// mobile nav
 				$('#menu_icon').on('click', function(){
 					$('.nav').toggleClass('show_menu');
 					$(this).toggleClass('fa-times fa-bars');
-				})
-
-				$('.nav li').on('click', function(){
+					$('.flickity-enabled').toggleClass('hide');
+					$('h2').toggleClass('hide');
+				});
+				$('nav li').on('click', function(){
 					$('.nav').removeClass('show_menu');
 					$('#menu_icon').toggleClass('fa-times fa-bars');
-				})
-			});
-			$('.work_gallery').flickity({
-				cellAlign: 'center',
-				imagesLoaded: true,
-				lazyload:true,
-				pageDots: false,
-				wrapAround: true
-			});
-			$('.quote_box').flickity({
-				cellAlign: 'center',
-				prevNextButtons: false,
-				autoPlay:true,
-				wrapAround: true
+					$('.flickity-enabled').toggleClass('hide');
+					$('h2').toggleClass('hide');
+				});
+				// flickity styles
+				$('.work_gallery').flickity({
+					cellAlign: 'center',
+					imagesLoaded: true,
+					lazyload:true,
+					pageDots: false,
+					wrapAround: true
+				});
+				$('.quote_box').flickity({
+					cellAlign: 'center',
+					prevNextButtons: false,
+					autoPlay:true,
+					wrapAround: true
+				});
 			});
 		</script>
 	<script src="https://use.fontawesome.com/f653ee54f9.js"></script>
