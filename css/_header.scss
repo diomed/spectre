@@ -5,174 +5,217 @@ header {
 	width: 100%;
 	position: relative;
 	z-index: 0;
+		.overlay1 {
+			background: rgba(37,40,45,0.6);
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			position: absolute;
+		}
 }
-	header .overlay1 {
-		background: rgba(37,40,45,0.6);
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 1;
-		position: absolute;
-	}
 .nav_container {
 	width: 100%;
 	z-index: 1000;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	border-bottom: 0.5px solid rgba(255,255,255,0.2);
 	position: relative;
 }
-	nav {
-		margin: 0 auto;
-		text-transform: uppercase;
-		justify-content: space-between;
-		align-items: center;
-		align-content: center;
-		margin: 0 3%;
-			ul.nav {
-				position: relative;
-				width: 46%;
-				margin: 0 auto;
-				justify-content: space-between;
-				z-index: 1000;
-					li {
-						padding: 25px 0;
-					}
-			}
-	}
-	nav ul.nav li > a {
-		font: 0.8rem $headerfont;
-		color: white;
-		letter-spacing: 1px;
-	}
-	.logo {
-		width: 15%;
-		display: block;
-		padding-top: 5px;
-			img {
-				max-width: 100%;
-				min-width: 80px;
-				width: 100px;
-			}
-	}
-	.search {
-		display: inline-block;
-		width: 15%;
-		text-align: right;
-			i.fa-search {
-				transform: scaleX(-1);
-				filter: FlipH;
-				font-size: 1.2rem;
-				color: white;
-					i.fa-search:hover {
-						background-color: $red;
-					}
-			}		
-	}
-	ul.nav li a:hover {
-		color: $red;
-	}
+nav {
+	margin: 0 auto;
+	text-transform: uppercase;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-ms-flex-line-pack: center;
+	    align-content: center;
+	margin: 0 3%;
 
-// NAV TOGGLE STYLES//////////////
+	.nav {
+		position: relative;
+		width: 46%;
+		margin: 0 auto;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		    justify-content: space-between;
+		z-index: 1000;
+
+		li {
+			padding: 25px 0;
+		}
+	}
+}
+nav .nav li > a {
+	font: 0.8rem $headerfont;
+	color: white;
+	letter-spacing: 1px;
+}
+.logo {
+	width: 15%;
+	display: block;
+	padding-top: 5px;
+
+	img {
+		max-width: 100%;
+		min-width: 80px;
+		width: 100px;
+	}
+}
+.search {
+	display: inline-block;
+	width: 15%;
+	text-align: right;
+
+	i.fa-search {
+		-webkit-transform: scaleX(-1);
+		        transform: scaleX(-1);
+		-webkit-filter: FlipH;
+		        filter: FlipH;
+		font-size: 1.2rem;
+		color: white;
+
+		i.fa-search:hover,
+		i.fa-search:focus {
+			background-color: $red;
+		}
+	}
+}
+.nav li a:hover,
+.nav li a:hover {
+	color: $red;
+}
+
+/* NAV TOGGLE STYLES//////////////*/
 
 .show_nav {
 	display: inline-block;
 }
-nav.top_nav .fa-bars, .fa-times {
+nav.top_nav .fa-bars,
+nav.top_nav .fa-times {
 	display: none;
-	color:$red;
-	transition:0.2s all ease;
+	color: $red;
 	cursor: pointer;
 	position: fixed;
 	right:18px;
 	z-index: 1000;
 }
 
-// END NAV TOGGLE STYLES//////////
+/* END NAV TOGGLE STYLES//////////*/
 
-	.header_content {
-		margin: 0 auto;
-		z-index: 10;
-			div.btn {
-				text-align: center;
-				padding-top: 8%;
-			}
+.header_content {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-57%);
+	        transform: translateY(-57%);
+	margin: 0 auto;
+	z-index: 10;
+
+	button {
+		text-align: center;
+		margin: 8% auto 0 auto;
+		display: block;
 	}
-	.header_content > p {
+
+	> p {
 		color: white;
 		line-height: 20px;
 		padding: 45px 20px 0 20px;
 	}
+}
 
-// MEDIA QUERIES////////////////////////////////////////////////////////
+/* MEDIA QUERIES////////////////////////////////////////////////////////*/
 
 @media all and (max-width: 1000px) {
 	h1 {
 		line-height: 40px;
-		padding-right:5%;
+		padding-right: 5%;
 		padding-left: 5%;
 	}
 }
 
-@media only screen and (min-width: 320px) and (max-width: 800px) {
+@media only screen and (min-width: 320px) and (max-width: 968px) {
 	h1 {
 		font-size: 2rem;
-		padding-top: 30%;
 		line-height: 35px;
 	}
 	nav {
 		padding: 10px 0;
-			ul.nav {
-				justify-content: space-between;
-				flex-direction: column;
-				display: none;
-				position: fixed;
-				z-index: 1000;
-				top: 0;
-				right: 0;
-				left: 0;
-				bottom: 0;
+
+		.nav {
+			// -webkit-box-pack: justify;
+			//     -ms-flex-pack: justify;
+			//         justify-content: space-between;
+			// -webkit-box-orient: vertical;
+			// -webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        -webkit-box-orient: vertical;
+			        -webkit-box-direction: normal;
+			            flex-direction: column;
+			position: fixed;
+			z-index: 1000;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			height: 100vh;
+			width: 100%;
+			background: rgba(white, 0.92);
+			opacity: 0;
+			-webkit-animation: fadeOut 180ms ease-out;
+			        animation: fadeOut 180ms ease-out;
+
+			li {
 				height: 100%;
-				width: 100%;
-				background: rgba(white, 0.9);
-					li {
-						height:100%;
-						align-content:center;
-						padding: 20px 0;
-						text-align: center;
-						border-bottom: 0.5px solid $lightgrey;
-							a {
-								font-size: 1.2rem;
-								color: $black;
-									a:hover, a:focus {
-										color: $red;
-									}
-							}
+				text-align: center;
+				border-bottom: 0.5px solid $lightgrey;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+
+				a {
+					font-size: 1.2rem;
+					color: $black;
+
+					&:hover,
+					&:focus {
+						color: $red;
 					}
+				}
 			}
+		}
+
+		.nav.show_menu {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			opacity: 1;
+			-webkit-animation: fadeIn 180ms ease-in;
+			        animation: fadeIn 180ms ease-in;
+		}
 	}
-	nav ul.nav li 
-	.nav {
-		display: none;
-	}
-	.nav.show_menu {
-		display: flex;
-	}
-	nav.top_nav .fa-bars, .fa-times {
+	nav.top_nav .fa-bars,
+	nav.top_nav .fa-times {
 		display: inline-block;
-		color: grey;
 	}
 	.search {
 		display: none;
-	}
-	.hide{
-		z-index: -5;
 	}
 }
 
 @media all and (max-width: 500px) {
 	h1 {
-		font-size:6.5vw;
+		font-size: 6.5vw;
 		line-height: 35px;
 	}
 }

@@ -12,7 +12,9 @@ section.section2 .work > p {
 	padding-bottom: 70px;
 }
 ul.work {
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	border-top: 0.5px solid rgba(255,255,255,0.2);
 	width: 66%;
 	margin: 0 auto;
@@ -51,6 +53,7 @@ ul.work {
 			position: absolute;
 			top: 10px;
 			right: 10px;
+			-webkit-transition: 0.25s all ease;
 			transition: 0.25s all ease;
 			bottom: 10px;
 			left: 10px;
@@ -80,6 +83,7 @@ ul.work {
 	border-radius: 50%;
 	border: 2px solid $black;
 	margin-top: 20px;
+	-webkit-transition: 0.25s all ease;
 	transition: 0.25s all ease;
 		&:hover,&:focus{
 			background-color: white;
@@ -88,7 +92,7 @@ ul.work {
 		}
 }
 
-// FLICKITY ARROWS
+/* FLICKITY ARROWS*/
 .work_gallery .flickity-prev-next-button {
 	width: 40px;
 	height: 40px;
@@ -110,7 +114,7 @@ ul.work {
 	right: -46.5%;
 	bottom: -40px;
 }
-// END FLICKITY ARROWS
+/* END FLICKITY ARROWS*/
 
 .quote_box {
 	position: relative;
@@ -152,21 +156,27 @@ ol.flickity-page-dots{
 	background: $red;
 	border-radius: 50%;
 	font-size: 0.6rem;
+	-webkit-transition: 0.3s all ease;
 	transition: 0.3s all ease;
 		&:hover,&:focus,&:target{
 			color: $red;
-			box-shadow: 0 0 3px 10px rgba($red, 0.7);
+			-webkit-box-shadow: 0 0 3px 10px rgba($red, 0.7);
+			        box-shadow: 0 0 3px 10px rgba($red, 0.7);
 		}
 }
 .stats_container {
 	padding-top: 100px;
 	width: 60%;
 	margin: 0 auto;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 		.stat_item {
 			width: 22%;
 				.stat1 {
-					align-items: center;
+					-webkit-box-align: center;
+					    -ms-flex-align: center;
+					        align-items: center;
 				}
 		}
 }
@@ -190,7 +200,7 @@ ol.flickity-page-dots{
 	text-align: left;
 }
 
-// MEDIA QUERIES///////////////////////////////////////////////////////////
+/* MEDIA QUERIES///////////////////////////////////////////////////////////*/
 
 @media all and (max-width: 1100px) {
 	.work_gallery figure.work_item figcaption.work_overlay {
@@ -212,8 +222,11 @@ ol.flickity-page-dots{
 		font-size: 2.1rem;
 	}
 	.stats_container {
-		flex-wrap: wrap;
-		justify-content: space-between;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 			.stat_item  {
 				width: 45%;
 				padding-bottom: 15px;
@@ -232,18 +245,29 @@ ol.flickity-page-dots{
 			}
 	}
 	.stats_container {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 	}
 	.stats_container .stat_item {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		width: auto;
 		padding-bottom: 25px;
 			.stat1 {
-				align-items: flex-start;
+				-webkit-box-align: start;
+				    -ms-flex-align: start;
+				        align-items: flex-start;
 				width: auto;
-				flex-direction: column;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				    -ms-flex-direction: column;
+				        flex-direction: column;
 				margin-right: 15px;
-				align-content:center;
+				-ms-flex-line-pack:center;
+				    align-content:center;
 					br {
 						display: none;
 					}
@@ -278,7 +302,9 @@ ol.flickity-page-dots{
 		width: 75%;
 	}
 	.stat_item {
-		align-items:center;
+		-webkit-box-align:center;
+		    -ms-flex-align:center;
+		        align-items:center;
 			.stat1 p:first-child {
 				font-size: 2.3rem;
 			}

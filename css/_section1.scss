@@ -6,9 +6,12 @@ section.section1 {
 }
 	section.section1 .about_container {
 		margin: 70px 16% 0 16%;
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 			.about_item {
-				align-content:center;
+				-ms-flex-line-pack:center;
+				    align-content:center;
 				text-align: center;
 				width: 20%;
 					img {
@@ -18,7 +21,8 @@ section.section1 {
 			}
 	}
 	.about_container .about_text {
-		align-content: center;
+		-ms-flex-line-pack: center;
+		    align-content: center;
 		padding-top: 30px;
 			p.small {
 				padding: 0;
@@ -30,11 +34,12 @@ section.section1 {
 		font-size: 0.5rem;
 	}
 
-// MEDIA QUERIES //////////////////////////////////////////////////////
+/* MEDIA QUERIES //////////////////////////////////////////////////////*/
 
 @media all and (max-width: 890px) {
 	section.section1 .about_container {
-		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 		margin: 0 11%;
 	}
 	section.section1 h2 {
@@ -48,11 +53,17 @@ section.section1 {
 @media all and (max-width: 650px) {
 	section.section1 .about_container .about_item {
 		width: 100%;
-		// padding-top: 50px;
+		/* padding-top: 50px;*/
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		margin: 0 auto;
-		justify-content: space-between;
-		align-items:center;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-webkit-box-align:center;
+		    -ms-flex-align:center;
+		        align-items:center;
 			img {
 				position: relative;
 				top: 3px;

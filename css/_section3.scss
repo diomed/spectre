@@ -1,5 +1,7 @@
 .team {
-	flex: 1 0 25%;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 0 25%;
+	        flex: 1 0 25%;
 	margin-top: 70px;
 	font-size: 0;
 		.team_item {
@@ -13,6 +15,7 @@
 					right: 10px;
 					bottom: 10px;
 					left: 10px;
+					-webkit-transition: 0.25s all ease;
 					transition: 0.25s all ease;
 					padding: 50% 20%;
 					text-align: center;
@@ -47,14 +50,15 @@
 	padding: -1.5px;
 }
 
-// MEDIA QUERIES////////////////////////////////////////////////////
+/* MEDIA QUERIES////////////////////////////////////////////////////*/
 
-// @media all and (max-width: 940px) {
-// }
+/* @media all and (max-width: 940px) {*/
+/* }*/
 
 @media all and (max-width: 768px) {
 	.team {
-		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 			.team_item {
 				width: 50%;
 			}
